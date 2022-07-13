@@ -113,3 +113,5 @@
 **/xcshareddata/WorkspaceSettings.xcsettings
 
 # End of https://www.toptal.com/developers/gitignore/api/xcode,swift,cocoapods 
+Landmarks/.DS_Store
+.DS_Store
