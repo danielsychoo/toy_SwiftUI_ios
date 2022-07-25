@@ -15,7 +15,7 @@ struct Coordinates: Hashable, Codable {
     var longitude: Double
 }
 
-struct Landmark: Hashable, Codable {
+struct Landmark: Hashable, Codable, Identifiable {
     var id: Int /// id
     var name: String /// 이름
     var park: String /// 공원

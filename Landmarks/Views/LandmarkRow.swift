@@ -10,7 +10,6 @@ import SwiftUI
 struct LandmarkRow: View {
     var landmark: Landmark
     
-    
     var body: some View {
         HStack {
             landmark.image
@@ -26,9 +25,9 @@ struct LandmarkRow: View {
 struct LandmarkRow_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            LandmarkRow(landmark: LandmarkManager().landmarks[0])
-            LandmarkRow(landmark: LandmarkManager().landmarks[1])
-            LandmarkRow(landmark: LandmarkManager().landmarks[2])
+            LandmarkRow(landmark: LandmarkManager.allLandmarks[0])
+            LandmarkRow(landmark: LandmarkManager.allLandmarks[1])
+            LandmarkRow(landmark: LandmarkManager.allLandmarks[2])
         }
         .previewLayout(.fixed(width: 300, height: 70)) /// previewLayout의 크기 조정
     }
