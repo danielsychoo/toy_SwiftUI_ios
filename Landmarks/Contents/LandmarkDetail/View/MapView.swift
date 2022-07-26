@@ -19,19 +19,41 @@ import MapKit
  */
 
 struct MapView: View {
+    
+    var coordinate: CLLocationCoordinate2D
+    
     // 상태 region
     @State private var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 34.011_286, longitude: -116.166_868),
         span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
     )
     
+    // MARK: - Body
+    
     var body: some View {
         Map(coordinateRegion: $region) /// $을 이용해 region 을 binding
+            .onAppear {
+                setRegion(coordinate)
+            }
     }
+    
+    
+    // MARK: - Methods
+    
+    private func setRegion(_ coordinate: CLLocationCoordinate2D) {
+        region = MKCoordinateRegion(
+            center: coordinate,
+            span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
+        )
+    }
+    
 }
+
+
+// MARK: - Preview
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        MapView()
+        MapView(coordinate: CLLocationCoordinate2D(latitude: 34.011_286, longitude: -116.166_868))
     }
 }

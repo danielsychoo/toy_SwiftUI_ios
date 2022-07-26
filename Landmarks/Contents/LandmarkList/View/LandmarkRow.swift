@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct LandmarkRow: View {
+    
     var landmark: Landmark
+    
+    
+    // MARK: - Body
     
     var body: some View {
         HStack {
@@ -20,7 +24,11 @@ struct LandmarkRow: View {
             Spacer()
         }
     }
+    
 }
+
+
+// MARK: - Preview
 
 struct LandmarkRow_Previews: PreviewProvider {
     static var previews: some View {
